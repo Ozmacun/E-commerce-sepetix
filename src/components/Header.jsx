@@ -3,14 +3,14 @@ import { Mail, Phone, Instagram, Youtube, Facebook, Twitter, Search, ShoppingCar
 import { Link } from "react-router-dom";
 export default function Header() {
   return (
-    
+
     <header className="h-32">
       {/* Top Bar */}
       <div className="bg-gray-900 text-white text-sm py-2 px-4 flex justify-between items-center h-14">
         {/* Left - Contact Info */}
         <div className="flex items-center space-x-4">
           <span className="flex items-center">
-            <Phone size={16} className="mr-1" /> (225) 555-0118
+            <Phone size={16} className="mr-1" /> (555) 555-5555
           </span>
           <span className="flex items-center">
             <Mail size={16} className="mr-1" /> sepetix@gmail.com
@@ -31,12 +31,12 @@ export default function Header() {
       </div>
 
       {/* Main Navbar */}
-      <div className="bg-white shadow-md py-3 px-6 flex justify-between items-center jus">
+      <div className="bg-white shadow-md px-6 flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold">Sepetix</div>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex space-x-6 text-gray-600 h-18 items-center">
+        <nav className="hidden md:flex space-x-6 text-gray-600 h-18 items-center relative">
           <Link to="/" className="hover:text-black">Home</Link>
           <Link to="/" className="hover:text-black">Shop</Link>
           <Link to="/" className="hover:text-black">About</Link>

@@ -1,66 +1,114 @@
-import React from 'react';
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import React from "react";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 py-10">
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold">Sepetix</h2>
-          <div className="flex space-x-4">
-            <FaFacebook className="text-blue-600 hover:text-blue-800 cursor-pointer" size={24} />
-            <FaInstagram className="text-pink-500 hover:text-pink-700 cursor-pointer" size={24} />
-            <FaTwitter className="text-blue-400 hover:text-blue-600 cursor-pointer" size={24} />
-          </div>
-        </div>
-        <div className="border-t border-gray-300 pt-6 grid grid-cols-2 md:grid-cols-5 gap-6">
-          <div>
-            <h3 className="font-semibold mb-2">Company Info</h3>
-            <ul className="space-y-1">
-              <li>About Us</li>
-              <li>Carrier</li>
-              <li>We are hiring</li>
-              <li>Blog</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-2">Legal</h3>
-            <ul className="space-y-1">
-              <li>About Us</li>
-              <li>Carrier</li>
-              <li>We are hiring</li>
-              <li>Blog</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-2">Features</h3>
-            <ul className="space-y-1">
-              <li>Business Marketing</li>
-              <li>User Analytic</li>
-              <li>Live Chat</li>
-              <li>Unlimited Support</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-2">Resources</h3>
-            <ul className="space-y-1">
-              <li>IOS & Android</li>
-              <li>Watch a Demo</li>
-              <li>Customers</li>
-              <li>API</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-2">Get In Touch</h3>
-            <div className="flex space-x-2 mb-2">
-              <input type="email" placeholder="Your Email" className="flex-1 p-2 border border-gray-300 rounded" />
-              <button className="bg-blue-500 text-white px-4 py-2 rounded">Subscribe</button>
+    <footer>
+      <div className="flex justify-center items-center bg-[#FAFAFA] h-[142px]">
+        <div className="container mx-[195px] h-[138px] border-b-1 border-[#E6E6E6] flex items-center">
+          <div className="row flex items-center justify-between w-[1050px]">
+            <div>
+              <h3 className="text-2xl font-bold">Sepetix</h3>
             </div>
-            <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet</p>
+            <div className="flex justify-center w-60">
+              <div className="flex gap-4 justify-between ">
+                <FaFacebook
+                  className="text-blue-600 hover:text-blue-800 cursor-pointer"
+                  size={23}
+                />
+                <FaInstagram
+                  className="text-pink-500 hover:text-pink-700 cursor-pointer"
+                  size={23}
+                />
+                <FaTwitter
+                  className="text-blue-400 hover:text-blue-600 cursor-pointer"
+                  size={23}
+                />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="mt-10 text-center text-sm text-gray-500">
-          Made With Love By Finland All Right Reserved
+      </div>
+      <div className="flex justify-center items-center bg-[#FFFFFF]">
+        <div className="container mx-48">
+          <div className="row flex justify-between my-[50px]">
+            <div className="flex flex-col gap-[20px]">
+              <h5 className="font-bold text-[#252B42]">Company Info</h5>
+
+              <div className="flex flex-col gap-[10px] text-[#737373] font-bold">
+                <Link>About Us</Link>
+
+                <Link>Carrier</Link>
+
+                <Link>We are hiring</Link>
+
+                <Link>Blog</Link>
+              </div>
+            </div>
+            <div className="flex flex-col gap-[20px]">
+              <h5 className="font-bold text-[#252B42]">Legal</h5>
+
+              <div className="flex flex-col gap-[10px] text-[#737373] font-bold">
+                <Link>About Us</Link>
+
+                <Link>Carrier</Link>
+
+                <Link>We are hiring</Link>
+
+                <Link>Blog</Link>
+              </div>
+            </div>
+            <div className="flex flex-col gap-[20px]">
+              <h5 className="font-bold text-[#252B42]">Features</h5>
+
+              <div className="flex flex-col gap-[10px] text-[#737373] font-bold">
+                <Link>Business Marketing</Link>
+
+                <Link>User Analytic</Link>
+
+                <Link>Live Chat</Link>
+
+                <Link>Unlimited Support</Link>
+              </div>
+            </div>
+            <div className="flex flex-col gap-[20px]">
+              <h5 className="font-bold text-[#252B42]">Resources</h5>
+
+              <div className="flex flex-col gap-[10px] text-[#737373] font-bold">
+                <Link>IOS & Android</Link>
+
+                <Link>Watch Demo</Link>
+
+                <Link>Customers</Link>
+
+                <Link>API</Link>
+              </div>
+            </div>
+            <div>
+              <h5 className="mb-[12px] font-bold  text-[#252B42]">Get In Touch</h5>
+              <div>
+                <div className=" h-[58px] w-[321px] border-2 border-[#E6E6E6] flex justify-between rounded-md mb-2.5">
+                  <input
+                    className="flex p-[15px] text-[14px] placeholder:text-[#737373]"
+                    type="text"
+                    placeholder="Your Email"
+                  />
+                  <button className="w-[117px]  bg-[#23A6F0] rounded-r-md text-[14px] text-[#FFFFFF]">
+                    Subscribe
+                  </button>
+                </div>
+                  <p>Lore imp sum dolor amit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className="container">
+          <div>
+            <p>Made With Love By Ocmazun All Right Reserved</p>
+          </div>
         </div>
       </div>
     </footer>

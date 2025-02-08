@@ -9,7 +9,7 @@ function App() {
       <Header />
       <Switch>
         <Route path="/" exact>
-          <h1>Home</h1>
+          <h1 className="">Home</h1>
         </Route>
       </Switch>
       <Footer />
