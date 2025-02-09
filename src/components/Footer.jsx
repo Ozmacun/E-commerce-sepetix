@@ -1,13 +1,13 @@
-import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import FooterLayout from "../layout/FooterLayout";
 
 const Footer = () => {
   return (
-    <footer>
+    <FooterLayout>
       <div className="flex justify-center items-center bg-[#FAFAFA] h-[142px]">
         <div className="container  flex items-center w-[1050px] h-[138px] border-b-1 border-[#E6E6E6]">
-          <div className="row flex items-center justify-between w-[1050px]">
+          <div className="flex items-center justify-between w-[1050px]">
             <div>
               <h3 className="text-2xl font-bold">Sepetix</h3>
             </div>
@@ -111,7 +111,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </FooterLayout>
   );
 };
 
