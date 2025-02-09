@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex justify-center items-center bg-[#FFFFFF]">
-        <div className="container mx-48">
+        <div className="container mx-[48px] my-[50px] w-[1050px] h-[270px]">
           <div className="row flex justify-between my-[50px]">
             <div className="flex flex-col gap-[20px]">
               <h5 className="font-bold text-[#252B42]">Company Info</h5>
@@ -98,15 +98,15 @@ const Footer = () => {
                     Subscribe
                   </button>
                 </div>
-                  <p>Lore imp sum dolor amit.</p>
+                  <p className="text-[#737373]">Lore imp sum dolor amit.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div>
-        <div className="container">
-          <div>
+      <div className="flex justify-center items-center bg-[#FAFAFA]  h-[74px]">
+        <div className="container mx-[195px] flex items-center">
+          <div className="row flex justify-between w-[600px] h-[24px]">
             <p>Made With Love By Ocmazun All Right Reserved</p>
           </div>
         </div>
