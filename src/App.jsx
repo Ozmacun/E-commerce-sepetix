@@ -6,7 +6,7 @@ console.log("PageContent:", PageContent);
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<PageContent></PageContent>} />
+      <Route path="/" element={<PageContent/>} />
     </Routes>
   );
 }
