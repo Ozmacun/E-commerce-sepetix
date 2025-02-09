@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="flex justify-center items-center bg-[#FAFAFA] h-[142px]">
-        <div className="container mx-[195px] h-[138px] border-b-1 border-[#E6E6E6] flex items-center">
+        <div className="container  flex items-center w-[1050px] h-[138px] border-b-1 border-[#E6E6E6]">
           <div className="row flex items-center justify-between w-[1050px]">
             <div>
               <h3 className="text-2xl font-bold">Sepetix</h3>
@@ -105,9 +105,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex justify-center items-center bg-[#FAFAFA]  h-[74px]">
-        <div className="container mx-[195px] flex items-center">
-          <div className="row flex justify-between w-[600px] h-[24px]">
-            <p>Made With Love By Ocmazun All Right Reserved</p>
+        <div className="container mx-[48px] my-[50px] w-[1050px]">
+          <div className="row flex justify-between w-[600px] h-[24px] text-[#737373] font-bold">
+            <h6>Made With Love By Ocmazun All Right Reserved</h6>
           </div>
         </div>
       </div>
