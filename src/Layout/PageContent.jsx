@@ -13,7 +13,7 @@ const PageContent = ({ children }) => {
       </NavbarLayout>
 
       {/* Sayfa İçeriği */}
-      <main>{children}</main>
+      <main>{}</main>
 
         <FooterLayout>
       {/* Footer */} <Footer />
