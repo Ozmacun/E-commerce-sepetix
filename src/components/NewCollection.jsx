@@ -43,21 +43,21 @@ export default function NewCollection() {
         <div className="relative mx-auto h-[753px] w-full overflow-hidden ">
           <img
             className="h-full w-full object-cover object-[70%] sm:object-top"
-            src="public/slide-01.jpg"
+            src="https://cote-lapyx.com/img/hero/slide-01.jpg"
             alt="Slide 1"
           />
         </div>
         <div className="relative mx-auto h-[753px] w-full overflow-hidden">
           <img
             className="h-full w-full object-cover object-middle"
-            src="public/slide-02.jpg"
+            src="https://media.licdn.com/dms/image/v2/D4E22AQFHdst6JrnbEg/feedshare-shrink_800/B4EZQMfGvlGcAk-/0/1735376268734?e=2147483647&v=beta&t=7GBiZW6elftboW69sb3bd_9JiRU_m5k05NSXnhy-K8A"
             alt="Slide 2"
           />
         </div>
         <div className="relative mx-auto h-[753px] w-full overflow-hidden">
           <img
             className="h-full w-full object-cover object-middle"
-            src="public/silde-03.jpg"
+            src="https://cdn.marketing123.123formbuilder.com/wp-content/uploads/sites/2/2021/08/consumer-behavior-in-marketing-min.jpg"
             alt="Slide 3"
           />
         </div>
