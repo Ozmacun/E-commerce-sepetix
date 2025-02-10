@@ -1,13 +1,15 @@
-import { Routes, Route } from "react-router-dom";
-
-import PageContent from "./layout/PageContent";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
 
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<PageContent/>} />
-    </Routes>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        {/* Diğer route'larınızı buraya ekleyebilirsiniz */}
+      </Routes>
+    </Router>
   );
 }
 
