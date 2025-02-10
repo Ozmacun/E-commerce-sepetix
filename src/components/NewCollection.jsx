@@ -43,21 +43,21 @@ export default function NewCollection() {
         <div className="relative mx-auto h-[753px] w-full overflow-hidden ">
           <img
             className="h-full w-full object-cover object-[70%] sm:object-top"
-            src="src/assets/slide-01.jpg"
+            src="public/slide-01.jpg"
             alt="Slide 1"
           />
         </div>
         <div className="relative mx-auto h-[753px] w-full overflow-hidden">
           <img
             className="h-full w-full object-cover object-middle"
-            src="src/assets/slide-02.jpg"
+            src="public/slide-02.jpg"
             alt="Slide 2"
           />
         </div>
         <div className="relative mx-auto h-[753px] w-full overflow-hidden">
           <img
             className="h-full w-full object-cover object-middle"
-            src="src/assets/silde-03.jpg"
+            src="public/silde-03.jpg"
             alt="Slide 3"
           />
         </div>
