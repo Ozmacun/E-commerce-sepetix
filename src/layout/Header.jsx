@@ -197,7 +197,7 @@ export default function Header() {
       {/* Mobilde görünen sadece üst kısım. Hamburger menülü ----text-[#23A6F0] icon classnamelere bunu verirsek desktoptaki gibi mavi oluyor.*/}
       <div className="bg-white md:hidden flex justify-between items-center h-[78px] px-4">
         <div className="text-2xl font-bold">
-          <h3>AlacaksanAL</h3>
+          <h3>Sepetix</h3>
         </div>
         <div className="flex items-center space-x-4">
           <Link to="/">
