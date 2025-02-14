@@ -1,8 +1,17 @@
+import bs_products_01 from "../assets/images/products/bs_products_01.jpeg";
+import bs_products_02 from "../assets/images/products/bs_products_02.jpeg";
+import bs_products_03 from "../assets/images/products/bs_products_03.jpeg";
+import bs_products_04 from "../assets/images/products/bs_products_04.jpeg";
+import bs_products_05 from "../assets/images/products/bs_products_05.jpeg";
+import bs_products_06 from "../assets/images/products/bs_products_06.jpeg";
+import bs_products_07 from "../assets/images/products/bs_products_07.jpeg";
+import bs_products_08 from "../assets/images/products/bs_products_08.jpeg";
+
 export default function BestsellerProducts() {
     const products = [
       {
         id: 1,
-        image: "https://via.placeholder.com/200",
+        image: bs_products_01,
         title: "Graphic Design",
         department: "English Department",
         price: "$16.48",
@@ -11,7 +20,7 @@ export default function BestsellerProducts() {
       },
       {
         id: 2,
-        image: "https://via.placeholder.com/200",
+        image: bs_products_02,
         title: "Graphic Design",
         department: "English Department",
         price: "$16.48",
@@ -20,7 +29,7 @@ export default function BestsellerProducts() {
       },
       {
         id: 3,
-        image: "https://via.placeholder.com/200",
+        image: bs_products_03,
         title: "Graphic Design",
         department: "English Department",
         price: "$16.48",
@@ -29,7 +38,7 @@ export default function BestsellerProducts() {
       },
       {
         id: 4,
-        image: "https://via.placeholder.com/200",
+        image: bs_products_04,
         title: "Graphic Design",
         department: "English Department",
         price: "$16.48",
@@ -38,7 +47,7 @@ export default function BestsellerProducts() {
       },
       {
         id: 5,
-        image: "https://via.placeholder.com/200",
+        image: bs_products_05,
         title: "Graphic Design",
         department: "English Department",
         price: "$16.48",
@@ -47,7 +56,7 @@ export default function BestsellerProducts() {
       },
       {
         id: 6,
-        image: "https://via.placeholder.com/200",
+        image: bs_products_06,
         title: "Graphic Design",
         department: "English Department",
         price: "$16.48",
@@ -56,7 +65,7 @@ export default function BestsellerProducts() {
       },
       {
         id: 7,
-        image: "https://via.placeholder.com/200",
+        image: bs_products_07,
         title: "Graphic Design",
         department: "English Department",
         price: "$16.48",
@@ -65,7 +74,7 @@ export default function BestsellerProducts() {
       },
       {
         id: 8,
-        image: "https://via.placeholder.com/200",
+        image: bs_products_08,
         title: "Graphic Design",
         department: "English Department",
         price: "$16.48",
@@ -76,14 +85,14 @@ export default function BestsellerProducts() {
   
     return (
       <div className="max-w-6xl mx-auto py-10">
-        {/* Başlık Alanı */}
+        
         <div className="text-center mb-6">
           <h4 className="text-xl leading-[1.875rem] font-normal text-[#737373]">Featured Products</h4>
           <h1 className="text-2xl font-bold">BESTSELLER PRODUCTS</h1>
           <p className="text-gray-500">Problems trying to resolve the conflict between</p>
         </div>
   
-        {/* Ürünler Listesi */}
+       
         <div className="flex flex-wrap justify-center gap-6 items-center">
           {products.map((product) => (
             <div

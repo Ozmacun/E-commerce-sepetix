@@ -64,11 +64,11 @@ export default function Header() {
     
       <div className="bg-white hidden md:flex flex-row justify-around items-center h-[78px]">
         <div className="text-2xl font-bold">
-          <h3>Sepetix</h3>
+        <Link to="/" className="hover:text-black transition">Sepetix</Link>
         </div>
         <nav className="text-[#737373] flex space-x-6 font-semibold">
           <Link to="/" className="hover:text-black transition">
-            Ana Sayfa
+            Main
           </Link>
           <div className="relative">
             <button
@@ -76,7 +76,7 @@ export default function Header() {
               className="flex items-center text-gray-700 hover:text-black focus:outline-none transition"
             >
               <span className="text-[#737373] items-center flex font-semibold hover:text-black cursor-pointer">
-                Mağaza
+              <Link to="/shop" className="hover:text-black transition">Shop</Link>
                 <ChevronDown className=" size-5 text-[#737373]" />
               </span>
             </button>
@@ -96,7 +96,7 @@ export default function Header() {
                             to="/shop/women/bags"
                             className="hover:text-black text-[#737373] font-semibold"
                           >
-                            Çantalar
+                            Bags
                           </Link>
                         </li>
                         <li>
@@ -104,7 +104,7 @@ export default function Header() {
                             to="/shop/women/belts"
                             className="hover:text-black"
                           >
-                            Kemerler
+                            Belts
                           </Link>
                         </li>
                         <li>
@@ -112,7 +112,7 @@ export default function Header() {
                             to="/shop/women/cosmetics"
                             className="hover:text-black"
                           >
-                            Kozmetik
+                            Cosmetics
                           </Link>
                         </li>
                         <li>
@@ -120,7 +120,7 @@ export default function Header() {
                             to="/shop/women/hats"
                             className="hover:text-black"
                           >
-                            Şapkalar
+                            Hats
                           </Link>
                         </li>
                       </ul>
@@ -134,7 +134,7 @@ export default function Header() {
                             to="/shop/men/bags"
                             className="hover:text-black"
                           >
-                            Çantalar
+                            Bags
                           </Link>
                         </li>
                         <li>
@@ -142,7 +142,7 @@ export default function Header() {
                             to="/shop/men/belts"
                             className="hover:text-black"
                           >
-                            Kemerler
+                            Belts
                           </Link>
                         </li>
                         <li>
@@ -150,7 +150,7 @@ export default function Header() {
                             to="/shop/men/cosmetics"
                             className="hover:text-black"
                           >
-                            Kozmetik
+                            Cosmetics
                           </Link>
                         </li>
                         <li>
@@ -158,7 +158,7 @@ export default function Header() {
                             to="/shop/men/hats"
                             className="hover:text-black"
                           >
-                            Şapkalar
+                            Hats
                           </Link>
                         </li>
                       </ul>
@@ -169,27 +169,27 @@ export default function Header() {
             )}
           </div>
           <Link to="/about" className="hover:text-black transition">
-            Hakkımızda
+            About
           </Link>
           <Link to="/blog" className="hover:text-black transition">
             Blog
           </Link>
           <Link to="/contact" className="hover:text-black transition">
-            İletişim
+            Contact
           </Link>
           <Link to="/pages" className="hover:text-black transition">
-            Sayfalar
+            Pages
           </Link>
         </nav>
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-1 text-[#23A6F0]">
             <FontAwesomeIcon icon={faUser} className="text-[12px]" />
             <Link to="/" className="font-bold text-[14px]">
-              Giriş Yap
+              Login
             </Link>
             <span className="font-bold text-[14px]">/</span>
             <Link to="/" className="font-bold text-[14px]">
-              Kayıt Ol
+              Register
             </Link>
           </div>
           <div className="flex items-center space-x-3 text-[#23A6F0]">
@@ -219,22 +219,22 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white w-full shadow-lg flex flex-col items-center text-center p-4 space-y-4">
           <Link to="/" className="hover:text-black transition">
-            Ana Sayfa
+            Main
           </Link>
           <Link to="/shop" className="hover:text-black transition">
-            Mağaza
+            Shop
           </Link>
           <Link to="/about" className="hover:text-black transition">
-            Hakkımızda
+            About
           </Link>
           <Link to="/blog" className="hover:text-black transition">
             Blog
           </Link>
           <Link to="/contact" className="hover:text-black transition">
-            İletişim
+            Contact
           </Link>
           <Link to="/pages" className="hover:text-black transition">
-            Sayfalar
+            Pages
           </Link>
         </div>
       )}

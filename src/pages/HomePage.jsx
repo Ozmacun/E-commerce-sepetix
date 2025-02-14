@@ -5,6 +5,8 @@ import NewCollection from "../components/NewCollection";
 import ClassicCollection from "../components/ClassicCollection";  
 import EditorsPick from "../components/EditorsPick";
 import BestsellerProducts from "../components/BestsellerProducts";
+import FeaturedPosts from "../components/FeaturedPosts";
+import FirstBanner from "../components/FirstBanner";
 
 export default function HomePage() {
   return (
@@ -14,6 +16,8 @@ export default function HomePage() {
       <EditorsPick></EditorsPick>
       <BestsellerProducts></BestsellerProducts>
       <ClassicCollection></ClassicCollection>
+      <FirstBanner></FirstBanner>
+      <FeaturedPosts></FeaturedPosts>
       </PageContent>
     </div>
   );
