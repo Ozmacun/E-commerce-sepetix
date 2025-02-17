@@ -188,8 +188,8 @@ export default function Header() {
               Login
             </Link>
             <span className="font-bold text-[14px]">/</span>
-            <Link to="/" className="font-bold text-[14px]">
-              Register
+            <Link to="/signup" className="font-bold text-[14px]">
+              Signup
             </Link>
           </div>
           <div className="flex items-center space-x-3 text-[#23A6F0]">

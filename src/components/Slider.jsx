@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 export default function Slider({ slides }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideCount = slides.length;
-  const navigate = useNavigate(); // Sayfa yönlendirme fonksiyonu , aşağıda tıklanabilir butona koydum.
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideCount);
-    }, 10000); // Burada 10 saniyede bir kaymasını sağlıyoruz otomatik olarak.
+    }, 10000); 
 
     return () => clearInterval(interval);
   }, [slideCount]);
