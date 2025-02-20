@@ -19,30 +19,46 @@ import {
 
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { logoutUser } from "../actions/clientActions";
+import md5 from "md5"; // Gravatar için email hashleme
 
 export default function Header() {
+  const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Redux'tan kullanıcı bilgilerini al
+  const user = useSelector((state) => state.client.user);
+
+  // Kullanıcı giriş yapmış mı kontrol et
+  const isAuthenticated = user && user.email;
+
+  // Kullanıcı gravatar URL'sini oluştur
+  const gravatarUrl = isAuthenticated
+    ? `https://www.gravatar.com/avatar/${md5(user.email)}?d=mp`
+    : null;
+
   return (
     <header>
+      {/* Üst Bilgi barı */}
       <div className="hidden md:flex bg-[#252B42] text-white justify-around items-center h-[58px]">
         <div className="flex items-center space-x-6">
-          <div className="flex items-center">
-            <span className="m-2">
+          <div className="flex items-center **items-center**"> {/* top-bar-icon-container yerine items-center */}
+            <span className="**mr-2 flex items-center**"> {/* top-bar-icon yerine mr-2 ve flex items-center */}
               <Phone size={16} />
             </span>
             <span className="font-bold text-[14px]">(555) 555-5555</span>
           </div>
-          <div className="flex items-center">
-            <span className="m-2">
+          <div className="flex items-center **items-center**"> {/* top-bar-icon-container yerine items-center */}
+            <span className="**mr-2 flex items-center**"> {/* top-bar-icon yerine mr-2 ve flex items-center */}
               <Mail size={16} />
             </span>
             <span className="font-bold text-[14px]">sepetix@gmail.com</span>
           </div>
         </div>
         <div className="font-bold text-[14px] text-center">
-          <h6>Bizi takip edin ve %50 indirim kazanma şansını yakalayın</h6>
+          <h6>Bizi takip edin ve %80 indirim kazanma şansını yakalayın</h6>
         </div>
         <div className="flex items-center gap-3">
           <h6 className="font-bold text-[14px]">Takip Et :</h6>
@@ -61,22 +77,22 @@ export default function Header() {
         </div>
       </div>
 
-    
+      {/* Desktop Navbar */}
       <div className="bg-white hidden md:flex flex-row justify-around items-center h-[78px]">
         <div className="text-2xl font-bold">
-        <Link to="/" className="hover:text-black transition">Sepetix</Link>
+          <Link to="/" className="hover:text-black transition">Sepetix</Link>
         </div>
-        <nav className="text-[#737373] flex space-x-6 font-semibold">
-          <Link to="/" className="hover:text-black transition">
-            Main
-          </Link>
+        <nav className="text-[#737373] flex space-x-6 font-semibold"> {/* nav-links class'ı kaldırıldı, space-x-6 yeterli */}
+          <Link to="/" className="hover:text-black transition">Ana Sayfa</Link>
           <div className="relative">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="flex items-center text-gray-700 hover:text-black focus:outline-none transition"
             >
               <span className="text-[#737373] items-center flex font-semibold hover:text-black cursor-pointer">
-              <Link to="/shop" className="hover:text-black transition">Shop</Link>
+                <Link to="/shop" className="hover:text-black transition">
+                  Mağaza
+                </Link>
                 <ChevronDown className=" size-5 text-[#737373]" />
               </span>
             </button>
@@ -102,7 +118,7 @@ export default function Header() {
                         <li>
                           <Link
                             to="/shop/women/belts"
-                            className="hover:text-black"
+                            className="hover:text-black text-[#737373] font-semibold"
                           >
                             Belts
                           </Link>
@@ -110,7 +126,7 @@ export default function Header() {
                         <li>
                           <Link
                             to="/shop/women/cosmetics"
-                            className="hover:text-black"
+                            className="hover:text-black text-[#737373] font-semibold"
                           >
                             Cosmetics
                           </Link>
@@ -118,7 +134,7 @@ export default function Header() {
                         <li>
                           <Link
                             to="/shop/women/hats"
-                            className="hover:text-black"
+                            className="hover:text-black text-[#737373] font-semibold"
                           >
                             Hats
                           </Link>
@@ -132,7 +148,7 @@ export default function Header() {
                         <li>
                           <Link
                             to="/shop/men/bags"
-                            className="hover:text-black"
+                            className="hover:text-black text-[#737373] font-semibold"
                           >
                             Bags
                           </Link>
@@ -140,7 +156,7 @@ export default function Header() {
                         <li>
                           <Link
                             to="/shop/men/belts"
-                            className="hover:text-black"
+                            className="hover:text-black text-[#737373] font-semibold"
                           >
                             Belts
                           </Link>
@@ -148,7 +164,7 @@ export default function Header() {
                         <li>
                           <Link
                             to="/shop/men/cosmetics"
-                            className="hover:text-black"
+                            className="hover:text-black text-[#737373] font-semibold"
                           >
                             Cosmetics
                           </Link>
@@ -156,7 +172,7 @@ export default function Header() {
                         <li>
                           <Link
                             to="/shop/men/hats"
-                            className="hover:text-black"
+                            className="hover:text-black text-[#737373] font-semibold"
                           >
                             Hats
                           </Link>
@@ -168,30 +184,35 @@ export default function Header() {
               </div>
             )}
           </div>
-          <Link to="/about" className="hover:text-black transition">
-            About
-          </Link>
-          <Link to="/blog" className="hover:text-black transition">
-            Blog
-          </Link>
-          <Link to="/contact" className="hover:text-black transition">
-            Contact
-          </Link>
-          <Link to="/pages" className="hover:text-black transition">
-            Pages
-          </Link>
+          <Link to="/about" className="hover:text-black transition">Hakkımızda</Link>
+          <Link to="/blog" className="hover:text-black transition">Blog</Link>
+          <Link to="/contact" className="hover:text-black transition">İletişim</Link>
+          <Link to="/pages" className="hover:text-black transition">Sayfalar</Link>
         </nav>
+
+        {/* Kullanıcı Girişi Alanı */}
         <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-1 text-[#23A6F0]">
-            <FontAwesomeIcon icon={faUser} className="text-[12px]" />
-            <Link to="/auth" className="font-bold text-[14px]">
-              Login
-            </Link>
-            <span className="font-bold text-[14px]">/</span>
-            <Link to="/auth" className="font-bold text-[14px]">
-              Signup
-            </Link>
-          </div>
+          {isAuthenticated ? (
+            <div className="flex items-center space-x-2">
+              <img src={gravatarUrl} alt="User Avatar" className="w-8 h-8 rounded-full" />
+              <span className="text-[#23A6F0] font-bold text-[14px]">
+                {user.name || "Misafir"}
+              </span>
+              <button
+                onClick={() => dispatch(logoutUser())}
+                className="px-3 py-1 rounded text-red-500 text-sm hover:bg-red-600 hover:text-white"
+              >
+                Çıkış Yap
+              </button>
+            </div>
+          ) : (
+            <div className="flex items-center space-x-1 text-[#23A6F0]">
+              <FontAwesomeIcon icon={faUser} className="text-[12px]" />
+              <Link to="/auth" className="font-bold text-[14px]">Giriş Yap</Link>
+              <span className="font-bold text-[14px]">/</span>
+              <Link to="/auth" className="font-bold text-[14px]">Kayıt Ol</Link>
+            </div>
+          )}
           <div className="flex items-center space-x-3 text-[#23A6F0]">
             <Search size={16} className="cursor-pointer" />
             <ShoppingCart size={16} className="cursor-pointer" />
@@ -200,14 +221,27 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Mobil Navbar */}
       <div className="bg-white md:hidden flex justify-between items-center h-[78px] px-4">
         <div className="text-2xl font-bold">
-          <h3>Sepetix</h3>
+          <Link to="/" className="hover:text-black transition">Sepetix</Link>
         </div>
         <div className="flex items-center space-x-4">
-          <Link to="/">
-            <User />
-          </Link>
+          {isAuthenticated ? (
+            <>
+              <img src={gravatarUrl} alt="User Avatar" className="w-8 h-8 rounded-full" />
+              <button
+                onClick={() => dispatch(logoutUser())}
+                className="text-red-500 text-sm hover:text-red-600"
+              >
+                Çıkış Yap
+              </button>
+            </>
+          ) : (
+            <Link to="/auth">
+              <User />
+            </Link>
+          )}
           <Search size={20} className="cursor-pointer" />
           <ShoppingCart size={20} className="cursor-pointer" />
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -216,26 +250,15 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Mobil Menü (Açılıp kapanıyor) */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white w-full shadow-lg flex flex-col items-center text-center p-4 space-y-4">
-          <Link to="/" className="hover:text-black transition">
-            Main
-          </Link>
-          <Link to="/shop" className="hover:text-black transition">
-            Shop
-          </Link>
-          <Link to="/about" className="hover:text-black transition">
-            About
-          </Link>
-          <Link to="/blog" className="hover:text-black transition">
-            Blog
-          </Link>
-          <Link to="/contact" className="hover:text-black transition">
-            Contact
-          </Link>
-          <Link to="/pages" className="hover:text-black transition">
-            Pages
-          </Link>
+          <Link to="/" className="hover:text-black transition">Ana Sayfa</Link>
+          <Link to="/shop" className="hover:text-black transition">Mağaza</Link>
+          <Link to="/about" className="hover:text-black transition">Hakkımızda</Link>
+          <Link to="/blog" className="hover:text-black transition">Blog</Link>
+          <Link to="/contact" className="hover:text-black transition">İletişim</Link>
+          <Link to="/pages" className="hover:text-black transition">Sayfalar</Link>
         </div>
       )}
     </header>
