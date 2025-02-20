@@ -184,11 +184,11 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-1 text-[#23A6F0]">
             <FontAwesomeIcon icon={faUser} className="text-[12px]" />
-            <Link to="/" className="font-bold text-[14px]">
+            <Link to="/auth" className="font-bold text-[14px]">
               Login
             </Link>
             <span className="font-bold text-[14px]">/</span>
-            <Link to="/signup" className="font-bold text-[14px]">
+            <Link to="/auth" className="font-bold text-[14px]">
               Signup
             </Link>
           </div>
