@@ -21,37 +21,33 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { logoutUser } from "../actions/clientActions";
-import md5 from "md5"; // Gravatar için email hashleme
+import md5 from "md5";
 
 export default function Header() {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Redux'tan kullanıcı bilgilerini al
   const user = useSelector((state) => state.client.user);
 
-  // Kullanıcı giriş yapmış mı kontrol et
   const isAuthenticated = user && user.email;
 
-  // Kullanıcı gravatar URL'sini oluştur
   const gravatarUrl = isAuthenticated
     ? `https://www.gravatar.com/avatar/${md5(user.email)}?d=mp`
     : null;
 
   return (
     <header>
-      {/* Üst Bilgi barı */}
       <div className="hidden md:flex bg-[#252B42] text-white justify-around items-center h-[58px]">
         <div className="flex items-center space-x-6">
-          <div className="flex items-center **items-center**"> {/* top-bar-icon-container yerine items-center */}
-            <span className="**mr-2 flex items-center**"> {/* top-bar-icon yerine mr-2 ve flex items-center */}
+          <div className="flex items-center **items-center**">
+            <span className="**mr-2 flex items-center**">
               <Phone size={16} />
             </span>
             <span className="font-bold text-[14px]">(555) 555-5555</span>
           </div>
-          <div className="flex items-center **items-center**"> {/* top-bar-icon-container yerine items-center */}
-            <span className="**mr-2 flex items-center**"> {/* top-bar-icon yerine mr-2 ve flex items-center */}
+          <div className="flex items-center **items-center**">
+            <span className="**mr-2 flex items-center**">
               <Mail size={16} />
             </span>
             <span className="font-bold text-[14px]">sepetix@gmail.com</span>
@@ -77,13 +73,16 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Desktop Navbar */}
       <div className="bg-white hidden md:flex flex-row justify-around items-center h-[78px]">
         <div className="text-2xl font-bold">
-          <Link to="/" className="hover:text-black transition">Sepetix</Link>
+          <Link to="/" className="hover:text-black transition">
+            Sepetix
+          </Link>
         </div>
-        <nav className="text-[#737373] flex space-x-6 font-semibold"> {/* nav-links class'ı kaldırıldı, space-x-6 yeterli */}
-          <Link to="/" className="hover:text-black transition">Ana Sayfa</Link>
+        <nav className="text-[#737373] flex space-x-6 font-semibold">
+          <Link to="/" className="hover:text-black transition">
+            Ana Sayfa
+          </Link>
           <div className="relative">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -184,17 +183,28 @@ export default function Header() {
               </div>
             )}
           </div>
-          <Link to="/about" className="hover:text-black transition">Hakkımızda</Link>
-          <Link to="/blog" className="hover:text-black transition">Blog</Link>
-          <Link to="/contact" className="hover:text-black transition">İletişim</Link>
-          <Link to="/pages" className="hover:text-black transition">Sayfalar</Link>
+          <Link to="/about" className="hover:text-black transition">
+            Hakkımızda
+          </Link>
+          <Link to="/blog" className="hover:text-black transition">
+            Blog
+          </Link>
+          <Link to="/contact" className="hover:text-black transition">
+            İletişim
+          </Link>
+          <Link to="/pages" className="hover:text-black transition">
+            Sayfalar
+          </Link>
         </nav>
 
-        {/* Kullanıcı Girişi Alanı */}
         <div className="flex items-center space-x-4">
           {isAuthenticated ? (
             <div className="flex items-center space-x-2">
-              <img src={gravatarUrl} alt="User Avatar" className="w-8 h-8 rounded-full" />
+              <img
+                src={gravatarUrl}
+                alt="User Avatar"
+                className="w-8 h-8 rounded-full"
+              />
               <span className="text-[#23A6F0] font-bold text-[14px]">
                 {user.name || "Misafir"}
               </span>
@@ -208,9 +218,13 @@ export default function Header() {
           ) : (
             <div className="flex items-center space-x-1 text-[#23A6F0]">
               <FontAwesomeIcon icon={faUser} className="text-[12px]" />
-              <Link to="/auth" className="font-bold text-[14px]">Giriş Yap</Link>
+              <Link to="/auth" className="font-bold text-[14px]">
+                Giriş Yap
+              </Link>
               <span className="font-bold text-[14px]">/</span>
-              <Link to="/auth" className="font-bold text-[14px]">Kayıt Ol</Link>
+              <Link to="/auth" className="font-bold text-[14px]">
+                Kayıt Ol
+              </Link>
             </div>
           )}
           <div className="flex items-center space-x-3 text-[#23A6F0]">
@@ -221,15 +235,20 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobil Navbar */}
       <div className="bg-white md:hidden flex justify-between items-center h-[78px] px-4">
         <div className="text-2xl font-bold">
-          <Link to="/" className="hover:text-black transition">Sepetix</Link>
+          <Link to="/" className="hover:text-black transition">
+            Sepetix
+          </Link>
         </div>
         <div className="flex items-center space-x-4">
           {isAuthenticated ? (
             <>
-              <img src={gravatarUrl} alt="User Avatar" className="w-8 h-8 rounded-full" />
+              <img
+                src={gravatarUrl}
+                alt="User Avatar"
+                className="w-8 h-8 rounded-full"
+              />
               <button
                 onClick={() => dispatch(logoutUser())}
                 className="text-red-500 text-sm hover:text-red-600"
@@ -250,15 +269,26 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobil Menü (Açılıp kapanıyor) */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white w-full shadow-lg flex flex-col items-center text-center p-4 space-y-4">
-          <Link to="/" className="hover:text-black transition">Ana Sayfa</Link>
-          <Link to="/shop" className="hover:text-black transition">Mağaza</Link>
-          <Link to="/about" className="hover:text-black transition">Hakkımızda</Link>
-          <Link to="/blog" className="hover:text-black transition">Blog</Link>
-          <Link to="/contact" className="hover:text-black transition">İletişim</Link>
-          <Link to="/pages" className="hover:text-black transition">Sayfalar</Link>
+          <Link to="/" className="hover:text-black transition">
+            Ana Sayfa
+          </Link>
+          <Link to="/shop" className="hover:text-black transition">
+            Mağaza
+          </Link>
+          <Link to="/about" className="hover:text-black transition">
+            Hakkımızda
+          </Link>
+          <Link to="/blog" className="hover:text-black transition">
+            Blog
+          </Link>
+          <Link to="/contact" className="hover:text-black transition">
+            İletişim
+          </Link>
+          <Link to="/pages" className="hover:text-black transition">
+            Sayfalar
+          </Link>
         </div>
       )}
     </header>
