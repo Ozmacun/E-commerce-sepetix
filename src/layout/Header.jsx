@@ -22,6 +22,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { logoutUser } from "../actions/clientActions";
 import md5 from "md5";
+import { Button } from "@/components/ui/button";
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -225,6 +226,7 @@ export default function Header() {
               <Link to="/auth" className="font-bold text-[14px]">
                 Kayıt Ol
               </Link>
+              <Button variant="destructive" size="lg">DENEME</Button>
             </div>
           )}
           <div className="flex items-center space-x-3 text-[#23A6F0]">
